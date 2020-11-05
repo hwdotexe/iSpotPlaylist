@@ -57,6 +57,10 @@ Now that we have an Access Token and your iTunes Library XML, it's time to run T
 Eventually, the script will ask for your Access Token. Paste it into the window, and at this point, you can follow the on-screen
 instructions. You'll enter the playlist you wish to convert, and it will send a series of API requests to Spotify and make it so.
 
+## Limitations
+Currently, this project only performs iTunes -> Spotify transitions, and doesn't work the other way around. Perhaps I will add this
+in the future, only fate can tell.
+
 ## Contributing
 If this project helped you, or if the code offended you by its ugliness, I welcome bug reports and pull requests here on GitHub.
 You can also leave a star, because y'know, I could use the self esteem.
