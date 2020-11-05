@@ -1,4 +1,4 @@
-package com.hadenwatne.itunestospotify;
+package com.hadenwatne.itunestospotify.models;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,6 +17,14 @@ public class iTunesPlaylist {
 
     public void addTrack(int trackInteger) {
         this.tracks.add(trackInteger);
+    }
+
+    public String getPlaylistName() {
+        return playlistName;
+    }
+
+    public List<Integer> getTracks() {
+        return tracks;
     }
 
     public JSONObject toJson() {

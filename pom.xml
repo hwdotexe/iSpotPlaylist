@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hadenwatne</groupId>
-    <artifactId>itts</artifactId>
-    <version>1.0.0</version>
+    <artifactId>iSpotPlaylist</artifactId>
+    <version>1.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,7 +29,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.hadenwatne.itunestospotify.ITTS</mainClass>
+                            <mainClass>com.hadenwatne.itunestospotify.iSpotPlaylist</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

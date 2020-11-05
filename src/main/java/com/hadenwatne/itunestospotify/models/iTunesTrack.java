@@ -1,4 +1,4 @@
-package com.hadenwatne.itunestospotify;
+package com.hadenwatne.itunestospotify.models;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,6 +17,10 @@ public class iTunesTrack {
         this.trackArtist = artist;
         this.trackAlbum = album;
         this.trackID = id;
+    }
+
+    public int getTrackID() {
+        return trackID;
     }
 
     public String getTrackName() {

@@ -20,7 +20,7 @@ There are a few steps involved, naturally. You though this would be easy?
 Build this project locally, or download the pre-compiled .jar file, and place it in a directory that is easy to access.
 Then, create a shell or batch file to run the jar, like so:
 ```shell script
-java -jar itts-1.0.0-jar-with-dependencies.jar process library.xml
+java -jar iSpotPlaylist-1.0.1-jar-with-dependencies.jar process library.xml
 ```
 (We'll create `library.xml` in the next step)
 #### Step 1

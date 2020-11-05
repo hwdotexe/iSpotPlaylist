@@ -1,12 +1,9 @@
-package com.hadenwatne.itunestospotify.spotifyauth;
+package com.hadenwatne.itunestospotify.spotify;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 public class HTTPUtil {
     public static String SendGET(String URI, String token) {
@@ -75,23 +72,6 @@ public class HTTPUtil {
                 return result.toString();
             } else {
                 System.out.println("Received "+conn.getResponseCode()+": "+conn.getResponseMessage());
-
-                System.out.println("URI:"+URI);
-                System.out.println("Body:"+body);
-                System.out.println("Result:");
-
-                // TESTING TESTING TESTING TESTING TESTING
-                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String line;
-                StringBuilder result = new StringBuilder();
-
-                while ((line = rd.readLine()) != null) {
-                    result.append(line);
-                }
-
-                rd.close();
-                conn.disconnect();
-                // TESTING TESTING TESTING TESTING TESTING
 
                 return null;
             }

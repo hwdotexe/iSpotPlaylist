@@ -1,4 +1,4 @@
-package com.hadenwatne.itunestospotify.spotifyauth;
+package com.hadenwatne.itunestospotify.spotify;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
