@@ -40,7 +40,7 @@ public class iSpotPlaylist {
 
                         upload(converted);
                     }else{
-                        System.out.println("Invalid arguments! Please supply an input XML file, and an output JSON file.");
+                        System.out.println("Invalid arguments! Please supply an input XML file.");
                     }
                     break;
                 default:

@@ -1,6 +1,7 @@
 package com.hadenwatne.itunestospotify.spotify;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -17,24 +18,7 @@ public class HTTPUtil {
                 conn.setRequestProperty("Authorization", "Bearer "+token);
             }
 
-            // Retrieve data
-            if (conn.getResponseCode() < 300) {
-                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String line;
-                StringBuilder result = new StringBuilder();
-
-                while ((line = rd.readLine()) != null) {
-                    result.append(line);
-                }
-
-                rd.close();
-                conn.disconnect();
-
-                return result.toString();
-            } else {
-                System.out.println("Received "+conn.getResponseCode()+": "+conn.getResponseMessage());
-                return null;
-            }
+            return receiveResponse(conn);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -56,27 +40,30 @@ public class HTTPUtil {
             conn.setRequestProperty("content-type", "application/json");
             conn.getOutputStream().write(body.getBytes());
 
-            // Retrieve data
-            if (conn.getResponseCode() < 300) {
-                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String line;
-                StringBuilder result = new StringBuilder();
-
-                while ((line = rd.readLine()) != null) {
-                    result.append(line);
-                }
-
-                rd.close();
-                conn.disconnect();
-
-                return result.toString();
-            } else {
-                System.out.println("Received "+conn.getResponseCode()+": "+conn.getResponseMessage());
-
-                return null;
-            }
+            return receiveResponse(conn);
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
+        }
+    }
+
+    private static String receiveResponse(HttpURLConnection conn) throws IOException {
+        if (conn.getResponseCode() < 300) {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            StringBuilder result = new StringBuilder();
+
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+
+            rd.close();
+            conn.disconnect();
+
+            return result.toString();
+        } else {
+            System.out.println("Received "+conn.getResponseCode()+": "+conn.getResponseMessage());
+
             return null;
         }
     }
